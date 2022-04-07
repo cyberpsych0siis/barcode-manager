@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "vite": "vite",
+    "lint": "vue-cli-service lint",
+    "setup": "yarn"
   },
   "dependencies": {
     "core-js": "^3.8.3",
