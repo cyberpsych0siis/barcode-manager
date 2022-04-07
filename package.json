@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "builpages": "vue-cli-service build",
     "vite": "vite",
     "lint": "vue-cli-service lint",
     "setup": "yarn"
