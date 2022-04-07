@@ -21,6 +21,9 @@ jobs:
       - name: Disable Jekyll
         run: "touch dist/.nojekyll"
 
+      - name: "Add CNAME File"
+        run: "cp CNAME dist/CNAME"
+
       - name: Publish generated content to GitHub Pages
         uses: tsunematsu21/actions-publish-gh-pages@v1.0.2
         with:
