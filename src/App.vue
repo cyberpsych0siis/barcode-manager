@@ -41,7 +41,7 @@ export default {
 
 body {
   margin: 0px;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: black;
 }
 
