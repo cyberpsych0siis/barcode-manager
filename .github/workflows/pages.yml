@@ -21,6 +21,9 @@ jobs:
       - name: Disable Jekyll
         run: "touch dist/.nojekyll"
 
+      - name: "Add Webmanifest"
+        run: "cp manifest.webmanifest dist/manifest.webmanifest"
+
       - name: "Add CNAME File"
         run: "cp CNAME dist/CNAME"
 
