@@ -24,7 +24,7 @@ export default {
         v-for="[key, value] in items"
         :key="key"
         :item="value"
-        :ean="value"
+        :ean="value.barcode"
       />
     </ul>
   </content>

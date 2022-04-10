@@ -3,7 +3,10 @@ import { mapMutations } from 'vuex';
 export default {
   setup() {},
   methods: {
-    ...mapMutations(["toggleEdit"])
+    ...mapMutations(["toggleEdit", "addItem"]),
+    debugAddItem() {
+      this.addItem("DEBUG ITEM");
+    }
   }
 };
 </script>
@@ -12,6 +15,7 @@ export default {
   <header class="grid">
     <p @click="this.toggleEdit">Edit</p>
     <p class="bold">Hello Header</p>
+    <p @click="this.debugAddItem">+</p>
   </header>
 </template>
 
@@ -20,10 +24,11 @@ header {
   /* display: grid; */
   background-color: red;
   text-align: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
   color: white;
-  max-height: 5vh;
+  font-size: 2vh;
+  /* max-height: 5vh; */
 }
 
 .grid {

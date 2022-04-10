@@ -1,4 +1,5 @@
 <script>
+// import '../assets/trash.svg';
 import { mapState, mapMutations } from "vuex";
 export default {
   computed: {
@@ -11,6 +12,7 @@ export default {
   methods: {
     ...mapMutations(["removeItem"]),
     remove(data) {
+      console.log(data);
       this.removeItem(data.target.dataset.ean);
     },
   },
@@ -23,14 +25,19 @@ export default {
     <div class="container">
       <div class="withicon"> -->
     <span class="withicon">
-      {{ item.name }}
+      {{ item.name }} - x{{ item.qty }}
     </span>
-    <span v-if="this.editMode" @click="this.remove" :data-ean="ean">delete</span
-    >
+    <div v-if="this.editMode" @click="this.remove" :data-ean="ean">
+      <img class="trash" src="trash.svg" />
+    </div>
   </li>
 </template>
 
 <style scoped>
+img.trash {
+  width: 2vh;
+}
+
 li {
   padding-top: 1.5vh;
   padding-bottom: 1.5vh;

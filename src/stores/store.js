@@ -28,7 +28,8 @@ export const store = new Vuex.Store({
             } else {   
                 state.items.set(ean, {
                     qty: 1,
-                    name: "EAN Code " + ean
+                    name: "EAN Code " + ean,
+                    barcode: ean
                 })
             }
         },
@@ -39,12 +40,13 @@ export const store = new Vuex.Store({
             if (state.items.get(ean) > 0) state.items.get(ean).qty--;
         },
         removeItem(state, ean) {
+            console.log(ean, state.items);
             if (state.items.has(ean)) {
-                // if (state.items.get(ean).qty > 1) {
-                    // state.items.get(ean).qty--;
-                // } else {
+                if (state.items.get(ean).qty > 1) {
+                    state.items.get(ean).qty--;
+                } else {
                     state.items.delete(ean);
-                // }
+                }
             }
         },
         toggleEdit(state) {

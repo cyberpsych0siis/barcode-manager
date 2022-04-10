@@ -19,8 +19,8 @@ export default {
       if (this.lastResult == null) {
         console.log(data.codeResult.code);
         this.lastResult = null;
-        stop();
         this.expanded = false;
+        stop();
         this.addItem(data.codeResult.code);
       }
     }),
@@ -125,6 +125,7 @@ export default {
   position: fixed;
   /* clip: rect(0px, 100vw, 10px, 0px); */
   width: 100vw;
+  /* top: calc(100vh) */
   bottom: 0px;
   transform: translate(0, 90vh);
   transition: transform 0.25s cubic-bezier(0.4, 0, 1, 1);
